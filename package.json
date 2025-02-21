@@ -4,7 +4,6 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"dev": "nodemon index.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "",
@@ -13,8 +12,5 @@
 	"dependencies": {
 		"ejs": "^3.1.10",
 		"express": "^4.21.2"
-	},
-	"devDependencies": {
-		"nodemon": "^3.1.9"
 	}
 }
