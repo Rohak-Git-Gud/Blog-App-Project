@@ -4,9 +4,17 @@ const USER = require("../models/user");
 
 const router = Router();
 
-router.get("/signin", (req, res) => {
-	return res.render("signin");
-});
+router
+	.route("/signin")
+	.get((req, res) => {
+		return res.render("signin");
+	})
+	.post(async (req, res) => {
+		const { email, password } = req.body;
+		const userName = await USER.userValidator(email, password);
+		if (userName) return res.redirect("/");
+		else return res.render("signin", { err: 1 });
+	});
 
 router
 	.route("/signup")

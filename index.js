@@ -1,7 +1,7 @@
 const path = require("path");
 const express = require("express");
 const { connectMongoDB } = require("./mongoConnect");
-const {loggerFunction}=require("./middlewares/logger")
+const { loggerFunction } = require("./middlewares/logger");
 const userRoute = require("./routes/user");
 
 const PORT = 8125;

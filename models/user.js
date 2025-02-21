@@ -44,9 +44,7 @@ userSchema.pre("save", function (next) {
 	const salt = randomBytes(64).toString();
 
 	//Hashing
-	const passwordHash = createHmac("sha256", salt)
-		.update(user.password)
-		.digest("hex");
+	const passwordHash = createHmac("sha256", salt).update(user.password).digest("hex");
 
 	//Updating Salt & Password in MongoDB
 	this.salt = salt;
@@ -54,6 +52,16 @@ userSchema.pre("save", function (next) {
 
 	//Calling next Middleware
 	next();
+});
+
+//Static Password Matching Virtual Function
+userSchema.static("userValidator", async function (email, password) {
+	const user = await this.findOne({ email });
+	if (!user) return;
+	const salt = user.salt;
+	const hashChk = createHmac("sha256", salt).update(password).digest("hex");
+	if (hashChk === user.password) return user.name;
+	return;
 });
 
 const USER = model("user", userSchema);
