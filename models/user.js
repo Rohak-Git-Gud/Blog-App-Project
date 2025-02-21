@@ -12,19 +12,18 @@ const userSchema = new Schema(
 			required: true,
 			unique: true,
 		},
-		salt: {
-			type: String,
-			required: true,
-		},
 		password: {
 			type: String,
 			required: true,
+		},
+		salt: {
+			type: String,
 		},
 		profilePhoto: {
 			type: String,
 			default: "/images/default.png",
 		},
-		password: {
+		role: {
 			type: String,
 			enum: ["USER", "ADMIN"],
 			default: "USER",
