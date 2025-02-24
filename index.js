@@ -1,5 +1,5 @@
-const path = require("path");
 const express = require("express");
+const path = require("path");
 const { connectMongoDB } = require("./mongoConnect");
 const { loggerFunction } = require("./middlewares/logger");
 const userRoute = require("./routes/user");

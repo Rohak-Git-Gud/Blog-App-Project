@@ -14,5 +14,16 @@ function createUserToken(user) {
 		profilePhoto: user.profilePhoto,
 		role: user.role,
 	};
-	const TOKEN = JWT.sign(payload, SECRET, {});
+	const TOKEN = JWT.sign(payload, SECRET); //Additional Options Later
+	return TOKEN;
 }
+
+function validateUserToken(token) {
+	const payload = JWT.verify(token, SECRET);
+	return payload;
+}
+
+module.exports = {
+	createUserToken,
+	validateUserToken,
+};
