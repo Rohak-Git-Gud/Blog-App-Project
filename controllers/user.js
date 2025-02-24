@@ -37,4 +37,14 @@ async function handlePOSTSignup(req, res) {
 	return res.redirect("/");
 }
 
-module.exports = { handleGETSignin, handlePOSTSignin, handleGETSignup, handlePOSTSignup };
+async function handleLogout(req, res) {
+	return res.clearCookie("token").redirect("/");
+}
+
+module.exports = {
+	handleGETSignin,
+	handlePOSTSignin,
+	handleGETSignup,
+	handlePOSTSignup,
+	handleLogout,
+};
