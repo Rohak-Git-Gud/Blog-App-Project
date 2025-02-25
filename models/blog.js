@@ -12,11 +12,15 @@ const blogSchema = new Schema(
 		},
 		photo: {
 			type: String,
-			default: "/resources/public/images/defaultBlog.png",
+			default: "/public/defaultBlog.png",
 		},
 		createdBy: {
 			type: Schema.Types.ObjectId,
 			ref: "user",
+		},
+		creatorName: {
+			type: String,
+			default: "Rohak",
 		},
 	},
 	{ timestamps: true }

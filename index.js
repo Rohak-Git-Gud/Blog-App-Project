@@ -9,12 +9,15 @@ const { connectMongoDB } = require("./mongoConnect");
 const { loggerFunction } = require("./middlewares/logger");
 const { checkCookieAuth } = require("./middlewares/auth");
 
+//TEMP
+const BLOG = require("./models/blog");
+
 const PORT = 8125;
 const APP = express();
 
 APP.use(loggerFunction("./logs.log"));
 APP.use(express.urlencoded({ extended: false }));
-APP.use(express.static(path.resolve("./resources/public/images/uploads")));
+APP.use(express.static(path.resolve("public")));
 APP.use(cookieParser());
 APP.use(checkCookieAuth("token"));
 
@@ -23,9 +26,18 @@ connectMongoDB();
 APP.set("view engine", "ejs");
 APP.set("views", path.resolve("./views"));
 
-APP.get("/", (req, res) => {
+// APP.get("/", (req, res) => {
+// 	res.render("home", {
+// 		user: req.user,
+// 	});
+// });
+
+//TEMP
+APP.get("/", async (req, res) => {
+	const allBlogs = await BLOG.find({}).sort("createdAt", { override: -1 });
 	res.render("home", {
 		user: req.user,
+		blogs: allBlogs,
 	});
 });
 

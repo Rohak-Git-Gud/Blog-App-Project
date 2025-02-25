@@ -10,7 +10,8 @@ async function handlePOSTAddBlog(req, res) {
 		body,
 		title,
 		createdBy: req.user._id,
-		photo: `//resources/public/images/uploads/${req.file.filename}`
+		creatorName: req.user.name,
+		photo: `/uploads/${req.file.filename}`
 	});
 	return res.redirect("/"); //WIP
 }
