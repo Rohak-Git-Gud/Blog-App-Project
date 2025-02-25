@@ -11,7 +11,7 @@ async function handlePOSTAddBlog(req, res) {
 		title,
 		createdBy: req.user._id,
 		creatorName: req.user.name,
-		photo: `/uploads/${req.file.filename}`
+		photo: `/img/uploads/${req.file.filename}`
 	});
 	return res.redirect("/"); //WIP
 }

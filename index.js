@@ -17,7 +17,7 @@ const APP = express();
 
 APP.use(loggerFunction("./logs.log"));
 APP.use(express.urlencoded({ extended: false }));
-APP.use(express.static(path.resolve("public")));
+APP.use(express.static(path.resolve("res/public")));
 APP.use(cookieParser());
 APP.use(checkCookieAuth("token"));
 

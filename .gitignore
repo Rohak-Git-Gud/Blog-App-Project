@@ -2,4 +2,4 @@
 logs.log
 secret-key.txt
 package-lock.json
-/resources/public/images/uploads/
+/res/public/img/

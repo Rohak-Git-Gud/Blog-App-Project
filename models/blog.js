@@ -12,7 +12,7 @@ const blogSchema = new Schema(
 		},
 		photo: {
 			type: String,
-			default: "/public/defaultBlog.png",
+			default: "/img/uploads/defaultBlog.png",
 		},
 		createdBy: {
 			type: Schema.Types.ObjectId,
