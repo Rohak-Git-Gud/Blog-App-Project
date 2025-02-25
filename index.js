@@ -3,6 +3,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 
 const userRoute = require("./routes/user");
+const blogRoute = require("./routes/blog");
 
 const { connectMongoDB } = require("./mongoConnect");
 const { loggerFunction } = require("./middlewares/logger");
@@ -28,6 +29,7 @@ APP.get("/", (req, res) => {
 });
 
 APP.use("/user", userRoute);
+APP.use("/blog", blogRoute);
 
 APP.listen(PORT, () => console.log("Server Started @ PORT: ", PORT));
 // http://localhost:8125/

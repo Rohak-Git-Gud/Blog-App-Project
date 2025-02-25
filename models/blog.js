@@ -10,10 +10,14 @@ const blogSchema = new Schema(
 			type: String,
 			required: true,
 		},
-        photo:{
-            type: String,
+		photo: {
+			type: String,
 			default: "/resources/public/images/defaultBlog.png",
-        },//WIP
+		},
+		createdBy: {
+			type: Schema.Types.ObjectId,
+			ref: "user",
+		},
 	},
 	{ timestamps: true }
 );
