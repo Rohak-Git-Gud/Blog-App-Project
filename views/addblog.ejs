@@ -7,7 +7,7 @@
 	<body>
 		<%- include("./partials/nav") %>
 		<div class="container mt-4">
-			<form action="/blog/create" method="POST">
+			<form action="/blog/create" method="POST" enctype="multipart/form-data">
 				<div class="mb-3">
 					<label for="title" class="form-label">Title</label>
 					<input

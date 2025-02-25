@@ -14,6 +14,7 @@ const APP = express();
 
 APP.use(loggerFunction("./logs.log"));
 APP.use(express.urlencoded({ extended: false }));
+APP.use(express.static(path.resolve("./resources/public/images/uploads")));
 APP.use(cookieParser());
 APP.use(checkCookieAuth("token"));
 
