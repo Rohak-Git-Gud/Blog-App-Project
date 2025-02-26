@@ -16,10 +16,9 @@ Roles Logic + Acc. Page: -
 Other Link redirect prevention Logic
 Other Security measures
 
+Command:
 E:
 cd MongoDB\mongodb-8.0.4\bin
 mongod --config mongod.cfg
 
 mongosh --port 8126
-use BAP
-db.
