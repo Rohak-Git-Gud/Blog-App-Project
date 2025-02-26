@@ -1,0 +1,25 @@
+CHECK WORKING
+
+All Blogs - Link V -> R/C
+blog/:id - VRC
+Comment - MVRC
+views\home.ejs & views\temp.ejs
+models\user.js, routes\user.js - Photo Upload
+controllers\user.js\handlePOSTSignup / views\signup.ejs - Validations?
+MISC routes/controllers
+services\auth.js - JWT Options
+CRUD
+Roles Logic + Acc. Page: -
+    models\user.js
+    routes\user.js
+    controllers\user.js
+Other Link redirect prevention Logic
+Other Security measures
+
+E:
+cd MongoDB\mongodb-8.0.4\bin
+mongod --config mongod.cfg
+
+mongosh --port 8126
+use BAP
+db.
