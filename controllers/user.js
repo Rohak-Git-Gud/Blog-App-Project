@@ -34,7 +34,7 @@ async function handlePOSTSignup(req, res) {
 		email,
 		password,
 	});
-	return res.redirect("/");
+	return res.render("signin");
 }
 
 async function handleLogout(req, res) {
